@@ -13,6 +13,26 @@ for ( const tasklist of tasklists ) {
 }
 ```
 
+# DESCRIPTION
+
+Advanced Google Services API (e.g. [Tasks API](https://developers.google.com/apps-script/advanced/tasks)) has paging system as following description.
+
+- call `XXX.list()` and get first page object `first`, first page contents include `first.items` array.
+- if `first.nextPageToken` property is exist, then call `XXX.list({pageToken: first.nextPageToken})`  and get second page object `second`, second page contents include `second.items` array.
+- if `second.nextPageToken` property ...(ditto)...
+
+In this situation, you can write easy iteration by PagesIterator.
+
+```js
+const pages = new PagesIterator(
+    token => token ? XXX.list() : XXX.list({pageToken: token})
+);
+for ( const item of pages ) {
+    console.log(`- ${item.title}`);
+}
+```
+
+
 # METHODS
 
 ## new PagesIterator(callback)
