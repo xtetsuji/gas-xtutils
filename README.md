@@ -22,13 +22,13 @@ const pages = new PagesIterator(
     token => token ? XXX.list() : XXX.list({pageToken: token})
 );
 for ( const item of pages ) {
-
+    console.log(`- ${item.title}`);
 }
 ```
 
 PagesIterator constructor has [the iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
-You can use PagesIterator on following context.
+You can use PagesIterator on following contexts.
 
-- `Array.for(iterable)`
+- `Array.from(iterable)`
 - `...iterable`
 - `[a, b, c] = iterable`
