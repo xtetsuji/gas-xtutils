@@ -1,4 +1,4 @@
-# gax-xtutils
+# gas-xtutils
 
 gas-xtutils is **GAS (Google Apps Script) xtetsuji's utility** .
 
