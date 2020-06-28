@@ -56,3 +56,4 @@ class PagesIterator {
   }
 }
 PagesIterator.SAFE_LIMIT = 20;
+PagesIterator.DATE_VERSION = "2020-06-28";
