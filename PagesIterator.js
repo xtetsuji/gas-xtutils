@@ -8,13 +8,13 @@ class PagesIterator {
    */
   constructor(callback) {
     this.callback = callback;
-    this.collection = []; // for debug
+    //this.collection = []; // for debug
     const res = this.callback();
-    this.collection.push(res); // for debug
+    //this.collection.push(res); // for debug
     this.current_response = res;
     this.safe_counter = 0;
-    console.log("PagesIterator: first response count is" + res.length);
-    console.log("safe limit is " + PagesIterator.SAFE_LIMIT);
+    //console.log("PagesIterator: first response count is" + res.length);
+    //console.log("safe limit is " + PagesIterator.SAFE_LIMIT);
   }
   /**
    * Retrieve next page if it is exist
@@ -23,14 +23,14 @@ class PagesIterator {
    */
   retrieve() {
     if ( !this.current_response.nextPageToken ) {
-      console.log("retrieve end");
+      //console.log("retrieve end");
       return false;
     }
-    console.log("retrieve start as token: " + this.current_response.nextPageToken);
+    //console.log("retrieve start as token: " + this.current_response.nextPageToken);
     const res = this.callback(this.current_response.nextPageToken);
-    this.collection.push(res); // for debug
+    //this.collection.push(res); // for debug
     this.current_response = res;
-    console.log("retrieved response have items.length: " + res.items.length );
+    //console.log("retrieved response have items.length: " + res.items.length );
     return res.items.length > 0 ? true : false;
   }
   /**
