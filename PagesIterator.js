@@ -55,4 +55,4 @@ class PagesIterator {
     console.log("iterator end");
   }
 }
-PagesIterator.SAFE_LIMIT = 10;
+PagesIterator.SAFE_LIMIT = 20;
