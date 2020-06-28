@@ -48,7 +48,7 @@ class PagesIterator {
       if ( !this.retrieve() ) break;
       console.log("new retrieve items are exist");
       if ( this.safe_counter > PagesIterator.SAFE_LIMIT ) {
-        console.log("safe counter over: break");
+        console.error("safe counter over: break");
         break;
       }
     }
