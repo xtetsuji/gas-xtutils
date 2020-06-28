@@ -38,21 +38,21 @@ class PagesIterator {
    * This class'es instance can puts iterable context, e.g. for ( const item of THIS ) { ... }
    */
   * [Symbol.iterator]() {
-    console.log("iterator start");
+    //console.log("iterator start");
     while(true) {
       this.safe_counter++;
-      console.log("loop top: " + this.safe_counter);
+      //console.log("loop top: " + this.safe_counter);
       for ( const obj of this.current_response.items ) {
         yield obj;
       }
       if ( !this.retrieve() ) break;
-      console.log("new retrieve items are exist");
+      //console.log("new retrieve items are exist");
       if ( this.safe_counter > PagesIterator.SAFE_LIMIT ) {
         console.error("safe counter over: break");
         break;
       }
     }
-    console.log("iterator end");
+    //console.log("iterator end");
   }
 }
 PagesIterator.SAFE_LIMIT = 20;
