@@ -14,6 +14,7 @@ class PagesIterator {
     this.current_response = res;
     this.safe_counter = 0;
     console.log("PagesIterator: first response count is" + res.length);
+    console.log("safe limit is " + PagesIterator.SAFE_LIMIT);
   }
   /**
    * Retrieve next page if it is exist
@@ -46,7 +47,7 @@ class PagesIterator {
       }
       if ( !this.retrieve() ) break;
       console.log("new retrieve items are exist");
-      if ( this.safe_counter > 10 ) {
+      if ( this.safe_counter > PagesIterator.SAFE_LIMIT ) {
         console.log("safe counter over: break");
         break;
       }
@@ -54,3 +55,4 @@ class PagesIterator {
     console.log("iterator end");
   }
 }
+PagesIterator.SAFE_LIMIT = 10;
