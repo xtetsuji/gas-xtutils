@@ -1,3 +1,13 @@
+/**
+ * PagesIterator
+ * 
+ * @description Pages Iterator for Advanced API
+ * @version 2020-06-28
+ * @author OGATA Tetsuji <tetsuji.ogata@gmail.com>
+ * @copyright OGATA Tetsuji
+ * @license MIT License.
+ * @see https://github.com/xtetsuji/gas-xtutils
+ */
 class PagesIterator {
   /**
    * constructor
